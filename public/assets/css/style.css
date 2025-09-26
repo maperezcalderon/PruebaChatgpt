@@ -1,0 +1,116 @@
+:root {
+    color-scheme: light dark;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary: #1f7a8c;
+    --background: #f5f7fa;
+    --sidebar-bg: #143642;
+    --sidebar-text: #ffffff;
+    --content-bg: #ffffff;
+    --border-color: #dde3ea;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: #1e1e1e;
+}
+
+.main-header,
+.main-footer {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.main-footer {
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #5b6875;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: calc(100vh - 220px);
+}
+
+.sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 1.5rem 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li + li {
+    margin-top: 1rem;
+}
+
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+}
+
+.content {
+    background: var(--content-bg);
+    padding: 2rem;
+    box-shadow: inset 0 1px 0 var(--border-color);
+}
+
+.content h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.contacto {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1rem;
+    margin: 1rem 0;
+}
+
+.contacto dt {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+    }
+}
